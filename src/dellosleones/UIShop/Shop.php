@@ -14,6 +14,7 @@ class Shop {
 	const ETC = "기타";
 	const BLOCK = "블럭";
 	const MINERAL = "광물";
+	const TOOL = "도구";
 	public $meta;
 	public function __construct(UIShop $plugin, ShopMetadata $meta){
 		$this->meta = $meta;

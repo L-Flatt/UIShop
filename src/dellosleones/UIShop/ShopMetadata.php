@@ -19,6 +19,7 @@ class ShopMetadata {
 	const ETC = "기타";
 	const BLOCK = "블럭";
 	const MINERAL = "광물";
+	const TOOL = "도구";
 	
 	public function __construct(UIShop $plugin, $id, $damage, $type, Config $price){
 		$this->plugin = $plugin;

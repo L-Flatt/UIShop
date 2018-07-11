@@ -116,12 +116,12 @@ class UIShop extends PluginBase implements Listener {
 	public function onCommand(CommandSender $sender, Command $command, $label, array $args) : bool {
 		if($command->getName() === "상점추가"){
 			if(! isset($args[0])){
-				$sender->sendMessage(TextFormat::BLUE . "사용법: /상점추가 (아이템코드:대미지) (광물/농작물/음식/무기/방어구/블럭/기타) §f또는 아이템을 손에 들고 §9/상점추가 (광물/농작물/음식/무기/방어구/블럭/기타) ");
+				$sender->sendMessage(TextFormat::BLUE . "사용법: /상점추가 (아이템코드:대미지) (광물/농작물/음식/무기/방어구/도구/블럭/기타) §f또는 아이템을 손에 들고 §9/상점추가 (광물/농작물/음식/무기/방어구/도구/블럭/기타) ");
 				return true;
 			}
 			if(! isset($args[1])){
 				if(! in_array($args[0], $this->shopdb->getTypes())){
-					$sender->sendMessage(TextFormat::BLUE . "사용법: /상점추가 (아이템코드:대미지) (광물/농작물/음식/무기/방어구/블럭/기타) §f또는 아이템을 손에 들고 §9/상점추가 (광물/농작물/음식/무기/방어구/블럭/기타) ");
+					$sender->sendMessage(TextFormat::BLUE . "사용법: /상점추가 (아이템코드:대미지) (광물/농작물/음식/무기/방어구/도구/블럭/기타) §f또는 아이템을 손에 들고 §9/상점추가 (광물/농작물/음식/무기/방어구/도구/블럭/기타) ");
 					return true;
 				}
 				if(! $sender instanceof Player){
@@ -143,12 +143,12 @@ class UIShop extends PluginBase implements Listener {
 		}
 		if($command->getName() === "상점제거"){
 			if(! isset($args[0])){
-				$sender->sendMessage(TextFormat::BLUE . "사용법: /상점제거 (아이템코드:대미지) (농작물/음식/무기/방어구/블럭/광물/기타) §f또는 아이템을 손에 들고§9 /상점제거 (농작물/음식/무기/방어구/블럭/광물/기타)");
+				$sender->sendMessage(TextFormat::BLUE . "사용법: /상점제거 (아이템코드:대미지) (농작물/음식/무기/방어구/도구/블럭/광물/기타) §f또는 아이템을 손에 들고§9 /상점제거 (농작물/음식/무기/방어구/도구/블럭/광물/기타)");
 				return true;
 			}
 			if(! isset($args[1])){
 				if(! in_array($args[0], $this->shopdb->getTypes())){
-					$sender->sendMessage(TextFormat::BLUE . "사용법: /상점제거 (아이템코드:대미지) (농작물/음식/무기/방어구/블럭/광물/기타) §f또는 아이템을 손에 들고§9 /상점제거 (농작물/음식/무기/방어구/블럭/광물/기타)");
+					$sender->sendMessage(TextFormat::BLUE . "사용법: /상점제거 (아이템코드:대미지) (농작물/음식/무기/방어구/도구/블럭/광물/기타) §f또는 아이템을 손에 들고§9 /상점제거 (농작물/음식/무기/방어구/도구/블럭/광물/기타)");
 					return true;
 				}
 				if(! $sender instanceof Player){

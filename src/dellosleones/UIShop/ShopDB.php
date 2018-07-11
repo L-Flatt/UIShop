@@ -87,7 +87,7 @@ class ShopDB {
 		return $this->shops[$type][$id] ?? null;
 	}
 	public function getTypes(){
-		return [Shop::CROPS, Shop::WEAPON, Shop::ARMOR, Shop::MINERAL, Shop::BLOCK, Shop::FOOD, Shop::ETC];
+		return [Shop::CROPS, Shop::WEAPON, Shop::ARMOR, Shop::TOOL, Shop::MINERAL, Shop::BLOCK, Shop::FOOD, Shop::ETC];
 	}
 	public function sellAll(Player $p){
 		$inv = $p->getInventory();
