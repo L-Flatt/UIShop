@@ -1,0 +1,27 @@
+name: UIShop
+main: dellosleones\UIShop\UIShop
+api: [3.0.0, 4.0.0]
+version: 3.0.3-alpha
+author: L.flatt
+commands:
+ 상점추가:
+  permission: uishop.create
+  description: 상점을 UI에 추가합니다
+ 상점제거:
+  permission: uishop.remove
+  description: UI상점을 제거합니다.
+ 가격설정:
+  permission: uishop.modifyprice
+  description: 상점의 가격을 설정합니다.
+ 전체판매:
+  permission: uishop.sellall
+  description: 보유한 아이템들 중 판매 가능한 아이템을 모두 판매합니다.
+permissions:
+ uishop.create:
+  default: OP
+ uishop.remove:
+  default: OP
+ uishop.modifyprice:
+  default: OP
+ uishop.sellall:
+  default: true
