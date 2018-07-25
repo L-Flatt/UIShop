@@ -14,12 +14,20 @@ class ShopDB{
 		$str = $damage === 0 ? (string) $id : $id . ":" . $damage;
 		$this->price->set($str, [$price, $this->price->get($str)[1]]);
 		$this->price->save();
+		$shop = $this->getShopByItemDamage($id, $damage);
+		if($shop !== null){
+			$shop->setBuyPrice($price);
+		}
 	}
 
 	public function setSellPrice($id, $damage, $price){
 		$str = $damage === 0 ? (string) $id : $id . ":" . $damage;
 		$this->price->set($str, [$this->price->get($str)[0], $price]);
 		$this->price->save();
+		$shop = $this->getShopByItemDamage($id, $damage);
+		if($shop !== null){
+			$shop->setSellPrice($price);
+		}
 	}
 
 	public function __construct(UIShop $plugin){
@@ -98,6 +106,16 @@ class ShopDB{
 
 	public function getTypes(){
 		return [Shop::CROPS, Shop::WEAPON, Shop::ARMOR, Shop::TOOL, Shop::MINERAL, Shop::BLOCK, Shop::FOOD, Shop::ETC];
+	}
+	
+	public function getShopByItemDamage(int $id, int $damage){
+		foreach($this->shops as $type=>$array){
+			foreach($array as $key=>$shop){
+				if($shop->meta->getItem()->getId() === $id and $shop->meta->getItem()->getDamage() === $damage)
+					return $shop;
+			}
+		}
+		return null;
 	}
 
 	public function sellAll(Player $p){

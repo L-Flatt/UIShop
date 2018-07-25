@@ -37,6 +37,14 @@ class ShopMetadata{
 	public function getType(){
 		return $this->type;
 	}
+	
+	public function setBuyPrice(int $price){
+		$this->buyPrice = $price;
+	}
+	
+	public function setSellPrice(int $price){
+		$this->sellPrice = $price;
+	}
 
 	public function getBuyPrice(){
 		return $this->buyPrice;
